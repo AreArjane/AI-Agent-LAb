@@ -1,0 +1,115 @@
+{
+    "info": {
+      "name": "Backend API Collection",
+      "_postman_id": "c6828c7a-8e9d-4e62-9d91-abc123example",
+      "description": "Postman collection for testing User and Post API endpoints using the Model-Repository-Controller structure.",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+      { "key": "baseUrl", "value": "http://localhost:5147" },
+      { "key": "userId", "value": "1" }
+    ],
+    "item": [
+      {
+        "name": "User - Create",
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "exec": [
+                "const jsonData = pm.response.json();",
+                "if (jsonData && jsonData.id) {",
+                "  pm.environment.set('userId', jsonData.id);",
+                "  console.log('User ID saved as environment variable:', jsonData.id);",
+                "} else {",
+                "  console.error('User creation failed or no ID returned.');",
+                "}"
+              ],
+              "type": "text/javascript"
+            }
+          }
+        ],
+        "request": {
+          "method": "POST",
+          "header": [{ "key": "Content-Type", "value": "application/json" }],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"name\": \"Test User\",\n    \"code\": \"0010234\"\n}"
+          },
+          "url": { "raw": "{{baseUrl}}/api/User", "host": ["{{baseUrl}}"], "path": ["api", "User"] }
+        }
+      },
+      {
+        "name": "User - Get All",
+        "request": { "method": "GET", "url": "{{baseUrl}}/api/User" }
+      },
+      {
+        "name": "User - Get by ID",
+        "request": { "method": "GET", "url": "{{baseUrl}}/api/User/{{userId}}" }
+      },
+      {
+        "name": "User - Update",
+        "request": {
+          "method": "PUT",
+          "header": [{ "key": "Content-Type", "value": "application/json" }],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"name\": \"Updated Name\",\n    \"code\": \"0010234\"\n}"
+          },
+          "url": "{{baseUrl}}/api/User/{{userId}}"
+        }
+      },
+      
+      {
+        "name": "Post - Create for User",
+        "event": [
+          {
+            "listen": "prerequest",
+            "script": {
+              "exec": [
+                "if (!pm.environment.get('userId')) {",
+                "  postman.setNextRequest(null);",
+                "  throw new Error('User ID not found. Run \"User - Create\" first.');",
+                "}"
+              ],
+              "type": "text/javascript"
+            }
+          }
+        ],
+        "request": {
+          "method": "POST",
+          "header": [{ "key": "Content-Type", "value": "application/json" }],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"title\": \"My First Post\",\n    \"content\": \"This is my first post content.\"\n}"
+          },
+          "url": "{{baseUrl}}/api/Post/user/{{userId}}"
+        }
+      },
+      {
+        "name": "Post - Get All by User",
+        "request": { "method": "GET", "url": "{{baseUrl}}/api/Post/user/{{userId}}" }
+      },
+      {
+        "name": "Post - Get by ID (User)",
+        "request": { "method": "GET", "url": "{{baseUrl}}/api/Post/1/user/{{userId}}" }
+      },
+      {
+        "name": "Post - Update",
+        "request": {
+          "method": "PUT",
+          "header": [{ "key": "Content-Type", "value": "application/json" }],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"title\": \"Updated Post Title\",\n    \"content\": \"Updated post content.\"\n}"
+          },
+          "url": "{{baseUrl}}/api/Post/1/user/{{userId}}"
+        }
+      },
+      {
+        "name": "Post - Delete",
+        "request": { "method": "DELETE", "url": "{{baseUrl}}/api/Post/1/user/{{userId}}" }
+      }
+    ]
+  }
+  
