@@ -1,3 +1,6 @@
+// API endpoints
+using Backend.Data;
+using Backend.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddCors(options =>
@@ -23,9 +26,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseCors();
 
-// API endpoints
-using Backend.Data;
-using Backend.Models;
+
 
 // Posts (public: published only)
 app.MapGet("/api/posts", () => DataStore.Posts.Where(p => p.Published));

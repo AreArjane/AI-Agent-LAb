@@ -157,3 +157,10 @@ private/
 !frontend-client/tsconfig.json
 !frontend-backend/package.json
 !frontend-backend/tsconfig.json
+# Keep important configs (in all iteration directories)
+!**/Backend/appsettings.json
+!**/frontend-client/package.json
+!**/frontend-client/tsconfig.json
+!**/frontend-backend/package.json
+!**/frontend-backend/tsconfig.json
+
