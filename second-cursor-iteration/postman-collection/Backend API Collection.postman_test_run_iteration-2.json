@@ -1,0 +1,114 @@
+{
+	"id": "c0d7b3d8-cee9-436e-91af-504187618f33",
+	"name": "Backend API Collection",
+	"timestamp": "2025-11-01T16:18:52.683Z",
+	"collection_id": "39269054-9be6c643-bf1a-43cf-808f-86cec33da521",
+	"folder_id": 0,
+	"environment_id": "39269054-6c03a1d0-34aa-4130-9b4c-e3a41daecb0f",
+	"totalPass": 0,
+	"delay": 0,
+	"persist": true,
+	"status": "error",
+	"startedAt": "2025-11-01T16:18:51.483Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "542afef7-393e-4aff-b7c3-1ec566572d3c",
+			"name": "User - Create",
+			"url": "http://localhost:5147/api/User",
+			"time": 726,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				726
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "7ec76f61-39ed-4817-85fd-6155240672ec",
+			"name": "User - Get All",
+			"url": "http://localhost:5147/api/User",
+			"time": 36,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				36
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "ebf97ee5-cef0-4748-9158-884254e8704a",
+			"name": "User - Get by ID",
+			"url": "http://localhost:5147/api/User/1",
+			"time": 42,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				42
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c2c52d55-2d70-4c0d-8547-dc8c03ede884",
+			"name": "User - Update",
+			"url": "http://localhost:5147/api/User/1",
+			"time": 12,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				12
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 816,
+	"collection": {
+		"requests": [
+			{
+				"id": "542afef7-393e-4aff-b7c3-1ec566572d3c",
+				"method": "POST"
+			},
+			{
+				"id": "7ec76f61-39ed-4817-85fd-6155240672ec",
+				"method": "GET"
+			},
+			{
+				"id": "ebf97ee5-cef0-4748-9158-884254e8704a",
+				"method": "GET"
+			},
+			{
+				"id": "c2c52d55-2d70-4c0d-8547-dc8c03ede884",
+				"method": "PUT"
+			},
+			{
+				"id": "76fba9fd-bd9f-4a1e-8857-29bfecd2de6a",
+				"method": "POST"
+			}
+		]
+	}
+}
