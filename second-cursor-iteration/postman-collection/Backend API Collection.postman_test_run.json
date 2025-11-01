@@ -1,0 +1,136 @@
+{
+	"id": "8c787e89-92fd-40a0-9b14-d469b94192f5",
+	"name": "Backend API Collection",
+	"timestamp": "2025-11-01T15:53:55.597Z",
+	"collection_id": "39269054-83f2962a-678c-4ebd-9452-b6a668d39f13",
+	"folder_id": 0,
+	"environment_id": "39269054-6c03a1d0-34aa-4130-9b4c-e3a41daecb0f",
+	"totalPass": 0,
+	"delay": 0,
+	"persist": true,
+	"status": "error",
+	"startedAt": "2025-11-01T15:53:54.544Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "2708fa98-0392-47e2-bf74-c0fa7e275c7e",
+			"name": "User - Create",
+			"url": "http://localhost:5147/api/User",
+			"time": 638,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				638
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "cffc040a-a480-493b-a52c-b336f206e46c",
+			"name": "User - Get All",
+			"url": "http://localhost:5147/api/User",
+			"time": 37,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				37
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "a4fa3a20-f717-444b-8786-d81860c1db34",
+			"name": "User - Get by ID",
+			"url": "http://localhost:5147/api/User/",
+			"time": 18,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				18
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c9280f1b-499f-4e3c-abfa-a1c06a266196",
+			"name": "User - Update",
+			"url": "http://localhost:5147/api/User/",
+			"time": 2,
+			"responseCode": {
+				"code": 405,
+				"name": "Method Not Allowed"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				2
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "7f9d206c-19ec-420b-92cb-4223e2054cdc",
+			"name": "User - Delete",
+			"url": "http://localhost:5147/api/User/",
+			"time": 1,
+			"responseCode": {
+				"code": 405,
+				"name": "Method Not Allowed"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				1
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 696,
+	"collection": {
+		"requests": [
+			{
+				"id": "2708fa98-0392-47e2-bf74-c0fa7e275c7e",
+				"method": "POST"
+			},
+			{
+				"id": "cffc040a-a480-493b-a52c-b336f206e46c",
+				"method": "GET"
+			},
+			{
+				"id": "a4fa3a20-f717-444b-8786-d81860c1db34",
+				"method": "GET"
+			},
+			{
+				"id": "c9280f1b-499f-4e3c-abfa-a1c06a266196",
+				"method": "PUT"
+			},
+			{
+				"id": "7f9d206c-19ec-420b-92cb-4223e2054cdc",
+				"method": "DELETE"
+			},
+			{
+				"id": "48061f53-4cd2-4ff2-be71-0c4e964b4b68",
+				"method": "POST"
+			}
+		]
+	}
+}
